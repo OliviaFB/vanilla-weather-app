@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/1b2ed3d9ff.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Zen+Loop&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container-weather-app">
+      <div class="header">
+        <img class="shecodeslogo" src="images/logo.png">
+
+        <form class="search-form bottom-line">
+          <div class="row padding-bottom-line">
+            <div class="col-8 searchbar-city">
+              <input
+                type="text"
+                id="city-input"
+                placeholder="Type a city..."
+                class="form-control shadow-sm"
+              />
+            </div>
+            <div class="col-4">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control shadow-sm button-pink"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container container-weatherinfo">
+        <div class="row">
+          <div class="col-lg-6 col-sm-12 d-flex">
+            <div><i class="fas fa-map-marker-alt icon-location"></i></div>
+            <div>
+              <div><p class="m-0" id="selected-city">Rotterdam</p></div>
+              <div id="weather-details">
+                <span class="m-0" id="date"></span> |
+                <span class="m-0" id="time"></span>
+                <div id="windspeed">Windspeed: <span class="pink-color">3,09km/h</span></div>
+                <div id="humidity">Humidity: <span class="pink-color">86%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-12 d-flex">
+            <div class="center-icon">
+              <img src="" id="main-icon">
+            </div>
+            <div style="padding: 6px">
+              <div>
+                <span class="temperature">19</span>
+                <span class="units"><a href="#" id="celsius-link">°C </a>| <a href="#" id="fahrenheit-link">°F</a></span>
+              </div>
+              <div id="description">Mostly cloudy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-cards">
+        <div class="card shadow-sm card-styling" style="width: 18rem">
+          <h5 class="card-title">Fri</h5>
+          <i class="far fa-sun weather-icon sun"></i>
+          <div class="card-body">
+            <p class="card-text">20˚C</p>
+          </div>
+        </div>
+
+        <div class="card shadow-sm card-styling" style="width: 18rem">
+          <h5 class="card-title">Sat</h5>
+          <i class="fas fa-cloud-sun weather-icon cloudy"></i>
+          <div class="card-body">
+            <p class="card-text">18˚C</p>
+          </div>
+        </div>
+
+        <div class="card shadow-sm card-styling" style="width: 18rem">
+          <h5 class="card-title">Sun</h5>
+          <i class="fas fa-cloud-sun weather-icon cloudy"></i>
+          <div class="card-body">
+            <p class="card-text">21˚C</p>
+          </div>
+        </div>
+
+        <div class="card shadow-sm card-styling" style="width: 18rem">
+          <h5 class="card-title">Mon</h5>
+          <i class="far fa-sun weather-icon sun"></i>
+          <div class="card-body">
+            <p class="card-text">20˚C</p>
+          </div>
+        </div>
+
+        <div class="card shadow-sm card-styling" style="width: 18rem">
+          <h5 class="card-title">Tue</h5>
+          <i class="fas fa-cloud-rain weather-icon rain"></i>
+          <div class="card-body">
+            <p class="card-text">17˚C</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-footer">
+        <p>This app was coded by <a href="https://github.com/OliviaFB/weather-app" target="_blank">Olivia Forbault</a> for SheCodes Plus</p>
+      </div>
+    </div>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>

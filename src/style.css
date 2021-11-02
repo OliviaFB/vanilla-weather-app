@@ -1,0 +1,186 @@
+/* General CSS */
+
+body {
+  background: rgb(248 248 253);
+  font-family: Arial;
+  background: #e3e1e9;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Zen Loop", cursive;
+  font-size: 52px;
+  margin-bottom: 28px;
+}
+
+.pink-color {
+  color: #e80a6bab;
+}
+
+/* Specific CSS */
+
+.shecodeslogo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.container-weather-app {
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 40px;
+  border-radius: 16px;
+  background: rgb(248 248 253);
+  max-width: 700px;
+  min-width: 650px;
+}
+
+.padding-bottom-line {
+  padding-bottom: 20px;
+}
+
+.bottom-line {
+  border-bottom: 1px solid #b9b8bcb0;
+}
+
+/* styling .container-weatherinfo */
+
+.container-weatherinfo {
+  padding: 20px;
+}
+
+#selected-city {
+  font-size: 40px;
+}
+
+.form-control {
+  background-color: #e3e1e9;
+  border: none;
+}
+
+.button-pink {
+  background-color: #ab97dc;
+  color: white;
+  border: none;
+}
+
+.button-yellow {
+  padding: 8px 22px;
+  border-radius: 4px;
+  background-color: #ffc107a8;
+  border: none;
+}
+
+.button-yellow a {
+  color: white;
+  text-decoration: none;
+}
+
+#weather-details {
+  color: #9d9d9d;
+  font-size: 14px;
+}
+
+.icon-location {
+  font-size: 32px;
+  color: #e80a6bab;
+  padding: 12px 10px 10px 10px;
+}
+
+.weather-icon {
+  font-size: 40px;
+}
+
+.weather-icon-temp {
+  padding: 0 20px 0 20px;
+  font-size: 52px;
+}
+
+.center-icon {
+  display: flex;
+  align-items: center;
+}
+
+.degree-size {
+  font-size: 10px;
+}
+
+.temperature {
+  font-size: 40px;
+}
+
+.temp-icon {
+  margin: 24px 10px 10px 50px;
+}
+
+.padding-location {
+  padding: 20px 8px 20px 0;
+}
+
+.weather-information {
+  margin: 10px;
+}
+
+/* Card container */
+
+.container-cards {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #b9b8bcb0;
+}
+
+.card-styling {
+  padding: 16px 0 0 0;
+  margin: 10px;
+  background-color: #fafafaba;
+  text-align: center;
+}
+
+.sun {
+  color: #ffc107;
+}
+
+.cloudy {
+  color: #adb5bd;
+}
+
+.rain {
+  color: #535252;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #ab97dc;
+  font-weight: bold;
+}
+
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
+}
+
+.units {
+  position: relative;
+  top: -16px;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #e80a6bab;
+}
+
+.app-footer {
+  text-align: center;
+  display: block;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #6d6a6a;
+}
+
+.app-footer a {
+  color: #ab97dc;
+  text-decoration: none;
+}
