@@ -30,6 +30,32 @@ let year = now.getFullYear();
 document.getElementById("time").innerHTML = `${hours}:${minutes}`;
 document.getElementById("date").innerHTML = `${day} ${month} ${date}, ${year}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+
+  let forecastHtml = `<div class="row">`;
+
+  let days = ["Mon", "Tue", "Wed", "Thu"];
+
+  days.forEach(function(day) {
+    forecastHtml =
+
+    forecastHtml +
+      `<div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+          <img src="https://openweathermap.org/img/wn/50d@2x.png" width="42px">
+          <div class="weather-forecast-temperatures">
+            <span class="temp-morning">7˚</span>
+            <span class="temp-afternoon">20˚</span>
+          </div>
+        </div>
+      `;
+  });
+  forecastHtml = forecastHtml + `</div>`;
+  forecastHtml.innerHTML = forecastHtml;
+  console.log(forecastHtml);
+}
+
 // Search engine
 
 let form = document.querySelector(".search-form");
@@ -78,6 +104,8 @@ function convertCelsius() {
 
 let fahrenheit = document.querySelector("#celsius-link");
 fahrenheit.addEventListener("click", convertCelsius);
+
+displayForecast();
 
 // // Current location
 

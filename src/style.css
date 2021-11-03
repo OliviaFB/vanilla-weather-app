@@ -130,11 +130,16 @@ h1 {
 
 /* Card container */
 
-.container-cards {
+.weather-forecast {
+  text-align: center;
+}
+
+
+/*.container-cards {
   display: flex;
   padding-bottom: 20px;
   border-bottom: 1px solid #b9b8bcb0;
-}
+}*/
 
 .card-styling {
   padding: 16px 0 0 0;
