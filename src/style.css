@@ -2,7 +2,7 @@
 
 body {
   background: rgb(248 248 253);
-  font-family: Arial;
+  font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
   background: #e3e1e9;
 }
 
@@ -80,8 +80,8 @@ h1 {
   color: #9d9d9d;
   font-size: 14px;
   position: relative;
-  top: -14px;
-  left: 6px;
+  top: -8px;
+  left: 3px;
 }
 
 .margin-center {
@@ -143,6 +143,23 @@ h1 {
   text-align: center;
 }
 
+.card-title {
+  color: #9d9d9d;
+  font-size: 14px;
+}
+
+.temp-morning {
+  font-size: 18px;
+  color: #ab97dc;
+  font-weight: bold;
+}
+
+.temp-afternoon {
+  font-size: 18px;
+  color: #ab97dc66;
+  font-weight: bold;
+}
+
 .sun {
   color: #ffc107;
 }
@@ -153,12 +170,6 @@ h1 {
 
 .rain {
   color: #535252;
-}
-
-.card-text {
-  font-size: 14px;
-  color: #ab97dc;
-  font-weight: bold;
 }
 
 #celsius-link,
