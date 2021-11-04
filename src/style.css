@@ -36,7 +36,7 @@ h1 {
 }
 
 .padding-bottom-line {
-  padding-bottom: 20px;
+  padding-bottom: 44px;
 }
 
 .bottom-line {
@@ -68,13 +68,6 @@ h1 {
   background-color: #ab97dc;
   color: white;
   border: none;
-}
-
-.button-yellow {
-  background-color: #ffc107a8;
-  color: white;
-  border: none;
-  text-align: center;
 }
 
 .button-yellow a {
@@ -114,10 +107,6 @@ h1 {
   align-items: center;
 }
 
-.degree-size {
-  font-size: 10px;
-}
-
 .temperature {
   font-size: 40px;
 }
@@ -140,9 +129,8 @@ h1 {
   text-align: center;
 }
 
-
 .padding-bottom {
-  padding-bottom: 20px;
+  padding-bottom: 32px;
 }
 
 .card-styling {
@@ -169,18 +157,6 @@ h1 {
   font-weight: bold;
 }
 
-.sun {
-  color: #ffc107;
-}
-
-.cloudy {
-  color: #adb5bd;
-}
-
-.rain {
-  color: #535252;
-}
-
 #celsius-link,
 #fahrenheit-link {
   text-decoration: none;
@@ -204,10 +180,10 @@ a:hover {
   display: block;
   padding-top: 20px;
   font-size: 14px;
-  color: #6d6a6a;
+  color: #9d9d9d;
 }
 
 .app-footer a {
-  color: #ab97dc;
+  color: #e80a6bab;
   text-decoration: none;
 }
