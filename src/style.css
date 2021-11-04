@@ -153,13 +153,13 @@ h1 {
   font-size: 14px;
 }
 
-.temp-morning {
+.temp-max {
   font-size: 18px;
   color: #ab97dc;
   font-weight: bold;
 }
 
-.temp-afternoon {
+.temp-min {
   font-size: 18px;
   color: #ab97dc66;
   font-weight: bold;

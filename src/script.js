@@ -30,27 +30,36 @@ let year = now.getFullYear();
 document.getElementById("time").innerHTML = `${hours}:${minutes}`;
 document.getElementById("date").innerHTML = `${day} ${month} ${date}, ${year}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+  console.log(forecast);
   let forecastElement = document.querySelector("#weather-forecast");
 
   let forecastHtml = `<div class="row">`;
 
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  days.forEach(function(day) {
+  forecast.forEach(function(forecastDay, index) {
+    if (index < 6){
     forecastHtml =
 
     forecastHtml +
       `<div class="col-2">
-        <div class="weather-forecast-date">${day}</div>
-          <img src="https://openweathermap.org/img/wn/50d@2x.png" width="42px">
+        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+          <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="42px">
           <div class="weather-forecast-temperatures">
-            <span class="temp-morning">7˚</span>
-            <span class="temp-afternoon">20˚</span>
+            <span class="temp-max">${Math.round(forecastDay.temp.max)}°</span>
+            <span class="temp-min">${Math.round(forecastDay.temp.min)}°</span>
           </div>
         </div>
       `;
+    }
   });
   forecastHtml = forecastHtml + `</div>`;
   forecastElement.innerHTML = forecastHtml;
@@ -75,7 +84,7 @@ function searchCity(city) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
+  // console.log(coordinates);
   let apiKey = "ae1f8e08b3b38c3a45d4ee026468148c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
