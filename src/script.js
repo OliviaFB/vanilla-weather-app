@@ -40,10 +40,9 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(forecast);
   let forecastElement = document.querySelector("#weather-forecast");
 
-  let forecastHtml = `<div class="row">`;
+  let forecastHtml = `<div class="row bottom-line padding-bottom">`;
 
   forecast.forEach(function(forecastDay, index) {
     if (index < 6){
@@ -51,17 +50,21 @@ function displayForecast(response) {
 
     forecastHtml +
       `<div class="col-2">
-        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-          <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="42px">
+        <div class="weather-forecast-date weather-details">${formatDay(forecastDay.dt)}</div>
+          <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="52px">
           <div class="weather-forecast-temperatures">
-            <span class="temp-max">${Math.round(forecastDay.temp.max)}°</span>
             <span class="temp-min">${Math.round(forecastDay.temp.min)}°</span>
+            <span class="temp-max">${Math.round(forecastDay.temp.max)}°</span>
           </div>
         </div>
       `;
     }
   });
-  forecastHtml = forecastHtml + `</div>`;
+  forecastHtml = forecastHtml +
+  `</div>
+    <div class="app-footer">
+      <p>This app was coded by <a href="https://github.com/OliviaFB/vanilla-weather-app" target="_blank">Olivia Forbault</a> for SheCodes Plus</p>
+    </div>`;
   forecastElement.innerHTML = forecastHtml;
 }
 
@@ -91,6 +94,7 @@ function getForecast(coordinates) {
 }
 
 function displayConditions(response) {
+  // console.log(response.data);
   document.querySelector("#selected-city").innerHTML = response.data.name;
   document.querySelector(".temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -121,30 +125,25 @@ function convertCelsius() {
 let fahrenheit = document.querySelector("#celsius-link");
 fahrenheit.addEventListener("click", convertCelsius);
 
-// // Current location
+// Current location
 
-// function searchLocation(position) {
-//   let apiKey = "d6f21b3a0cd54e52da7c23d8eae1a64e";
-//   let lat = position.coords.lat;
-//   let long = position.coords.lon;
-//   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
-//   axios.get(apiUrl).then(displayConditions);
-// }
+function getCurrentLocation(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let units = "metric";
+  let apiKey = "ae1f8e08b3b38c3a45d4ee026468148c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayConditions);
+}
 
-// function getCurrentLocation(event) {
-//   event.preventDefault();
-//   navigator.geolocation.getCurrentPosition(searchLocation);
-// }
+function getPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(getCurrentLocation);
+}
 
-// let currentLocationButton = document.querySelector(".button-yellow");
-// currentLocationButton.addEventListener("click", getCurrentLocation);
+let getCurrentCity = document.querySelector("#get-current-city");
+getCurrentCity.addEventListener("click", getPosition);
 
-
-
-
-
-
-
-
+searchCity("Rotterdam");
 
 
