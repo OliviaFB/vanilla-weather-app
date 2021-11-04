@@ -30,7 +30,8 @@ let year = now.getFullYear();
 document.getElementById("time").innerHTML = `${hours}:${minutes}`;
 document.getElementById("date").innerHTML = `${day} ${month} ${date}, ${year}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#weather-forecast");
 
   let forecastHtml = `<div class="row">`;
@@ -53,7 +54,6 @@ function displayForecast() {
   });
   forecastHtml = forecastHtml + `</div>`;
   forecastElement.innerHTML = forecastHtml;
-  console.log(forecastHtml);
 }
 
 // Search engine
@@ -74,8 +74,14 @@ function searchCity(city) {
   axios.get(apiUrl).then(displayConditions);
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "ae1f8e08b3b38c3a45d4ee026468148c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayConditions(response) {
-  console.log(response.data);
   document.querySelector("#selected-city").innerHTML = response.data.name;
   document.querySelector(".temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -85,6 +91,7 @@ function displayConditions(response) {
   document.querySelector("#windspeed").innerHTML = `Windspeed: ` + response.data.wind.speed + `km/h`;
   document.querySelector("#humidity").innerHTML = `Humidity: ` + response.data.main.humidity + `%`;
   document.querySelector("#main-icon").setAttribute("src",`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  getForecast(response.data.coord);
 }
 
 // Degree conversion
@@ -104,8 +111,6 @@ function convertCelsius() {
 
 let fahrenheit = document.querySelector("#celsius-link");
 fahrenheit.addEventListener("click", convertCelsius);
-
-displayForecast();
 
 // // Current location
 
